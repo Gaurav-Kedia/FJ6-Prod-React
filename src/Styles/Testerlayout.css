@@ -1,0 +1,31 @@
+/* body{
+    margin: 0;
+} */
+.h1{
+    margin: 0%;
+}
+.l1{
+    min-height: 5vh;
+    font-size: 15;
+    background-color: aquamarine;
+}
+.l2{
+    height: 90vh;
+    background-color: bisque;
+}
+
+body {
+    margin: 0;
+  }
+  .vh-15 {
+    min-height: 15vh;
+  }
+  .vh-70 {
+    min-height: 70vh;
+  }
+  
+  /* for illustration */
+  .bg-red   { background: red;   }
+  .bg-green { background: green; }
+  .bg-blue  { background: blue;  }
+  div       { color: white;      }

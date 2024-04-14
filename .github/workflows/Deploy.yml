@@ -1,0 +1,26 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.AWS_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+      - name: Add SSH key to known_hosts
+        run: |
+          ssh-keyscan -t rsa -H ${{ secrets.SERVER_PUBLIC_IP }} >> ~/.ssh/known_hosts
+      - name: Deploy to EC2
+        run: |
+          ssh -v -i ~/.ssh/id_rsa ubuntu@${{ secrets.SERVER_PUBLIC_IP }} 'cd /home/ubuntu/React-1/test-env-foreverjava-React && pwd && ls -l && git stash && git pull origin main && cd Scripts && chmod +x Deploy-Script.sh && ./Deploy-Script.sh'

@@ -1,0 +1,140 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    height: 75px;
+    background-color: #FFFFFF; 
+    padding: 0 100px 0 48px; 
+    box-shadow: 0px 4px 4px 0px #00000040;
+  }
+
+.logo { 
+  display: flex; 
+  gap: 10px; 
+  align-items: center;
+  justify-content: center; 
+  margin-right: auto;
+}
+
+.logo img {
+  height: 28px; 
+  width: auto;
+}
+.logo h1 {
+  color: #015252;
+  font-family: Inter;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+} 
+
+.nav-links{
+  list-style: none;   
+  display: flex;
+  gap: 20px ; 
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-right: 100px; 
+}  
+.nav-links li .Link {
+  color : #4D4D4D;
+  text-decoration: none;
+}
+.nav-links li:first-child .Link{
+  color: #005252;
+}
+.sign-up {
+  padding: 12px 27px;
+  border-radius: 4px;
+  gap: 7px; 
+  background-color: #00A925; 
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  white-space: nowrap;
+} 
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    height: 43px; 
+    padding: 0 30px;
+  } 
+   .logo img {
+      height: 21px;
+    } 
+  .logo h1 {
+      font-size : 14px;
+      line-height: 14px;
+  } 
+  .nav-links {
+    font-size: 13px; 
+    margin-right: 50px;
+    gap: 15px;
+  } 
+  .sign-up {
+    font-size: 11px; 
+    padding: 6px 14px 6px 14px;
+  } 
+ }  
+
+ @media screen and (max-width: 640px) { 
+      .navbar {
+        position: relative;
+      } 
+      .toggle {
+        color: black;
+        font-size: 18px; 
+      }
+      .navbar .nav-links{
+        display: none;
+      }  
+      .navbar .sign-up {
+        display: none;
+      } 
+      .side-bar { 
+        z-index: 100;
+        display : block; 
+        position : absolute;
+        left: 50%;
+        top: 43px;
+        transform: translateX(-50%);
+        width: 100%;
+        min-width: 400px;
+        background-color: white; 
+        border-radius: 0 0 10px 10px;
+
+      }
+      .side-bar .nav-links {
+          display: flex; 
+          width: 100%;
+          flex-direction: column; 
+          gap: 0; 
+          font-size: 16px; 
+      } 
+      .side-bar .nav-links li{
+        display : block;  
+        padding: 5px 0;
+      }   
+      .side-bar .nav-links li:hover {
+        background-color: #F1F1F1;
+      }
+
+      .side-bar .sign-up{ 
+          font-size: 14px; 
+          border-radius : 5px;
+          display: block;  
+          width: max-content;
+          margin: 10px auto;
+      } 
+      .side-bar .sign-up:hover {
+        background-color: #06ca31
+      }
+ }

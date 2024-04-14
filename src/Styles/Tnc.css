@@ -1,0 +1,38 @@
+.mainb .b1{
+    padding: 128.5px ; 
+    color: black; 
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+.mainb .h1 {
+    display: grid ;
+    place-content: center;
+    height: 236px;
+    background-color: #005252;
+    font-family: Inter;
+    font-family: Inter;
+    font-size:48px;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: 0em;
+}
+
+@media screen and (max-width: 768px){
+    .mainb .b1{
+        padding: 100px 50px ; 
+    } 
+    .mainb .h1 { 
+        font-size : 36px;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .mainb .b1{
+        padding: 80px 30px ; 
+    }
+}
