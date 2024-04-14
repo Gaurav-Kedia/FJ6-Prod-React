@@ -23,4 +23,4 @@ jobs:
           ssh-keyscan -t rsa -H ${{ secrets.SERVER_PUBLIC_IP }} >> ~/.ssh/known_hosts
       - name: Deploy to EC2
         run: |
-          ssh -v -i ~/.ssh/id_rsa ubuntu@${{ secrets.SERVER_PUBLIC_IP }} 'cd /home/ubuntu/React-1/test-env-foreverjava-React && pwd && ls -l && git stash && git pull origin main && cd Scripts && chmod +x Deploy-Script.sh && ./Deploy-Script.sh'
+          ssh -v -i ~/.ssh/id_rsa ubuntu@${{ secrets.SERVER_PUBLIC_IP }} 'cd /home/ubuntu/React-1/FJ6-Prod-React && pwd && ls -l && git stash && git pull origin master && cd Scripts && chmod +x Script.sh && ./Script.sh'
