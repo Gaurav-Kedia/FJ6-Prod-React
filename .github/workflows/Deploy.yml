@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }} # Checkout the specific tag
 
       - name: Install SSH key
         run: |
