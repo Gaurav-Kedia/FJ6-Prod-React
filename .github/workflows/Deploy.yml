@@ -20,9 +20,14 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.AWS_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+
       - name: Add SSH key to known_hosts
         run: |
           ssh-keyscan -t rsa -H ${{ secrets.SERVER_PUBLIC_IP }} >> ~/.ssh/known_hosts
+
+      - name: Fetch only changes up to tag
+        run: git fetch origin ${{ github.ref }}
+
       - name: Deploy to EC2
         run: |
-          ssh -v -i ~/.ssh/id_rsa ubuntu@${{ secrets.SERVER_PUBLIC_IP }} 'cd /home/ubuntu/React-1/FJ6-Prod-React && pwd && ls -l && git stash && git pull origin master && cd Scripts && chmod +x Script.sh && ./Script.sh'
+          ssh -v -i ~/.ssh/id_rsa ubuntu@${{ secrets.SERVER_PUBLIC_IP }} 'bash -s' < ./scripts/deploy_script.sh
