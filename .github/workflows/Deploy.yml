@@ -26,7 +26,8 @@ jobs:
           ssh-keyscan -t rsa -H ${{ secrets.SERVER_PUBLIC_IP }} >> ~/.ssh/known_hosts
 
       - name: Fetch only changes up to tag
-        run: git fetch origin ${{ github.ref }}
+        run: |
+          git fetch origin ${{ github.ref }}
 
       - name: Deploy to EC2
         run: |
