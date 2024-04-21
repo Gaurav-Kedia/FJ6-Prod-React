@@ -7,6 +7,7 @@ echo "Echoing: Deploying with GitHub ref: $github_ref"
 cd
 cd /home/ubuntu/React-1/FJ6-Prod-React/
 echo "Echoing: checking out master, pulling all, fetching, and then checking out tag_ref"
+git stash
 git checkout master
 git pull --all
 git fetch
