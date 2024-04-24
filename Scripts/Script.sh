@@ -1,24 +1,23 @@
 #!/bin/bash
+
 echo "********** Running Script .sh file **********"
-# Access the argument passed to the script (GitHub ref)
-github_ref="$1"
-# Use the GitHub ref as needed in your deployment logic
-echo "Echoing: Deploying with GitHub ref: $github_ref"
-cd
+
+# Change directory to your React project
 cd /home/ubuntu/React-1/FJ6-Prod-React/
-echo "Echoing: checking out master, pulling all, fetching, and then checking out tag_ref"
-git stash
-git checkout master
-git pull --all
-git fetch
-git checkout tags/ $github_ref
-echo "Echoing: Checked out tags/ $github_ref"
-npm i 
-echo "Echoing: Installed npm packages"
+
+# Install dependencies
+npm install
+
+# Build the project
 npm run build
-echo "Echoing: Build completed, and now moving over files to prod location"
+
+# Copy build files to Apache server directory
 sudo cp -r build/* /var/www/html/
-ls -l
-pwd
+
+# List files in the copied directory for verification
+ls -l /var/www/html/
+
+# Reload Apache to apply changes
 sudo systemctl reload apache2
-echo "********** End of Script .sh file 1 **********"
+
+echo "********** End of Script .sh file **********"
