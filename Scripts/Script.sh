@@ -1,7 +1,6 @@
 #!/bin/bash
 
 echo "********** Running Script .sh file **********"
-Tag_Ref = $1
 
 # Change directory to your React project
 cd /home/ubuntu/React-1/FJ6-Prod-React/
@@ -9,11 +8,19 @@ cd /home/ubuntu/React-1/FJ6-Prod-React/
 # Install dependencies
 npm install
 
+# Receive tag reference as input parameter
+tag_ref="$1"
+
+if [ -z "$tag_ref" ]; then
+  echo "Error: Tag reference is empty. Exiting..."
+  exit 1
+fi
+
 # Fetch latest changes from remote repository
 git fetch
 
-# Checkout the specific tag
-git checkout "$Tag_Ref"  # Replace <some-tag-name> with the desired tag name
+# Checkout the specified tag
+git checkout "$tag_ref"
 
 # Build the project
 npm run build
