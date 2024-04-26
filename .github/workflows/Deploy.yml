@@ -28,4 +28,4 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh -v -i ~/.ssh/id_rsa ubuntu@${{ secrets.SERVER_PUBLIC_IP }} 'bash -s' < ./Scripts/Script.sh
+          ssh -v -i ~/.ssh/id_rsa ubuntu@${{ secrets.SERVER_PUBLIC_IP }} 'bash -s' < ./Scripts/Script.sh ${{ github.ref }}
