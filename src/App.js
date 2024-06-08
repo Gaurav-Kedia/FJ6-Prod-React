@@ -142,8 +142,9 @@ return (
         <div className='extra'> 
 			<ul>
 				<li>We are proud to announce that we are registered under the Udyam Registration scheme, implemented by the Government of India.</li>
-				<li>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minimli</li>
-				<li>veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+				<li>We have implemented multi-threading concept in the server, now up to 10 concurrent requests can be processed simultaneously.</li>
+				<li>We have added the FJCrypto file to the backend codebase, now all the credentials are stored and fetched securely.</li>
+				<li>We have introduced multiple environmental variables in the EC2 server, which will help developers to directly clone the backend spring-boot repository in their local-machine and does not require any further setup.</li>
 			</ul>
 		
 	</div>
