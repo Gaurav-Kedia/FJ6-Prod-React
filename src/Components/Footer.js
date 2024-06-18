@@ -21,7 +21,7 @@ function Footer(){
             <Link className= "Link" to="/Snd">Shipping and Delivery <br /> Policy</Link> <span className='bar'>|</span>
             <Link className= "Link" to="/Cnr">Cancellation and Refund <br /> Policy</Link>
           </div>  
-          <p className='copyright'>ForeverJava © #2023 checking 19 with tag ref and ci commit All Rights Reserved</p>
+          <p className='copyright'>ForeverJava © 2024 All Rights Reserved</p>
     </div>
 	)
 }
