@@ -82,72 +82,77 @@ return (
 		fontSize={fontSize} setFontSize={setFontSize}
 	/>
 	<div className="main">
-		<div className="top-container"> 
-		   <div className='buttons'> 
-			<button className='theme-change btn'>
-				<span class="material-symbols-outlined light-mode">
-   					light_mode
-			    </span> 
-			</button>
-			<button className='settings btn'><i class="fa-solid fa-gear"></i></button>
-			
-			<select class="language-select btn"
-					name="language" 
-					id="language">
-				<option value="java">Java</option>
-				<option value="cpp">C++</option>
-				<option value="python">Python</option>
-			</select>
-			
-			<button className="run-btn btn" onClick={() => compile()}>
-			<i class="fa-solid fa-circle-play"></i>
-				Compile
-			</button>
-		</div> 
-		<div className='editor-container'>
-		<Editor
-			options={options}
-			theme={userTheme}
-			language={userLang}
-			defaultLanguage="java"
-			defaultValue="// Enter your code here"
-			onChange={(value) => { setUserCode(value) }}
-		/> 
-		<div className='extend-editor'>
-			<span class="material-symbols-outlined">
-			open_in_full
-			</span>
-		</div>
-		</div>
-		
-		</div>
-			<textarea  className="input-box"
-			placeholder= 'Enter input to program here'
-			id="code-inp" 
-			onChange= {(e) => setUserInput(e.target.value)}>
-			</textarea>
-		{loading ? (
-			<div className="spinner-box">
+			<div className='buttons-container'> 
+				<button className='theme-change btn'>
+					<span class="material-symbols-outlined light-mode">
+						light_mode
+					</span> 
+				</button>
+				<button className='settings btn'><i class="fa-solid fa-gear"></i></button>
+				
+				<select class="language-select btn"
+						name="language" 
+						id="language">
+					<option value="java">Java</option>
+					<option value="cpp">C++</option>
+					<option value="python">Python</option>
+				</select>
+				
+				<button className="run-btn btn" onClick={() => compile()}>
+				<i class="fa-solid fa-circle-play"></i>
+					Compile
+				</button>
+			</div> 
+		<div class="content-row">
+			<div className="top-container"> 
+				<div className='editor-container'>
+				<Editor
+					options={options}
+					theme={userTheme}
+					language={userLang}
+					defaultLanguage="java"
+					defaultValue="// Enter your code here"
+					onChange={(value) => { setUserCode(value) }}
+				/> 
+				<div className='extend-editor'>
+					<span class="material-symbols-outlined">
+					open_in_full
+					</span>
+				</div>
+				</div>
+				</div>
+				<div class="right-container">
+				<div class="input-div">
+					<textarea  className="input-box"
+					placeholder= 'Enter input to program here'
+					id="code-inp" 
+					onChange= {(e) => setUserInput(e.target.value)}>
+					</textarea> 
+				</div>
+				{loading ? (
+					<div className="spinner-box">
+					</div>
+				) : (
+					<div ref={ref} className="output-box"> 
+					<div className='title'>Output</div>
+					<pre>{userOutput}</pre>
+					{/* <button onClick={() => { clearOutput() }}
+						className="clear-btn">
+						Clear
+					</button> */}
+					</div>
+				)}
+				</div>
 			</div>
-		) : (
-			<div ref={ref} className="output-box"> 
-			<div className='title'>Output</div>
-			<pre>{userOutput}</pre>
-			{/* <button onClick={() => { clearOutput() }}
-				className="clear-btn">
-				Clear
-			</button> */}
+			<div className='extra'> 
+				<ul>
+					<li>We are proud to announce that we are registered under the Udyam Registration scheme, implemented by the Government of India.</li>
+					<li>We have implemented multi-threading concept in the server, now up to 10 concurrent requests can be processed simultaneously.</li>
+					<li>We have added the FJCrypto file to the backend codebase, now all the credentials are stored and fetched securely.</li>
+					<li>We have introduced multiple environmental variables in the EC2 server, which will help developers to directly clone the backend spring-boot repository in their local-machine and does not require any further setup.</li>
+				</ul>
+			
 			</div>
-		)}
-        <div className='extra'> 
-			<ul>
-				<li>We are proud to announce that we are registered under the Udyam Registration scheme, implemented by the Government of India.</li>
-				<li>We have implemented multi-threading concept in the server, now up to 10 concurrent requests can be processed simultaneously.</li>
-				<li>We have added the FJCrypto file to the backend codebase, now all the credentials are stored and fetched securely.</li>
-				<li>We have introduced multiple environmental variables in the EC2 server, which will help developers to directly clone the backend spring-boot repository in their local-machine and does not require any further setup.</li>
-			</ul>
-		
-	</div>
 	</div>
 	{/* <div class="fbar">
 		<h1>fotter texts</h1>
@@ -160,5 +165,4 @@ return (
 	</div>
 );
 }
-
 export default App;
