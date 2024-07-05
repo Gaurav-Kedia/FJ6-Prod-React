@@ -1,15 +1,15 @@
 .footer {
   width: 100%;
   height: 311px;
-  background-color: #252641; 
+  background-color: #252641;
   padding: 50px 40px;
   position: relative;
-} 
+}
 
 .p-div {
   display: flex;
   align-items: center;
-  justify-content: space-between;  
+  justify-content: space-between;
   margin-bottom: 50px;
 }
 .p-div h4{
@@ -20,36 +20,37 @@
   letter-spacing: 0em;
   text-align: center;
   color: white;
-} 
+}
 
 .p-div .icons {
   display: flex;
-  gap: 15px; 
+  gap: 15px;
   font-size: 20px;
 }
 
 .footer-links {
-  display: flex; 
+  display: flex;
   justify-content: center;
   gap: 20px
 }
 
 .bar {
-  color: #626381; 
+  color: #626381;
   line-height: 2;
 }
 
 .footer-links .Link {
   font-family: Poppins;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 33px;
   letter-spacing: 0.04em;
   text-align: center;
   white-space: nowrap;
   color: #FFFFFF;
-  text-decoration: none;  
-} 
+  text-decoration: none;
+  overflow: hidden;
+}
 
 .copyright {
   font-family: Poppins;
@@ -57,39 +58,49 @@
   font-weight: 400;
   line-height: 23px;
   letter-spacing: 0.04em;
-  text-align: center; 
+  text-align: center;
   color: #B2B3CF;
   position : absolute;
   bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
-} 
-
-@media screen and (max-width: 768px) { 
+}
+@media screen and (max-width: 932px) {
+  .footer-links .Link{
+    font-size: 15px;
+  }
+  .footer-links{
+    gap:10px;
+  }
+  .p-div{
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
    .footer {
     height: 212px;
     padding: 30px 25px 30px 30px;
-   } 
+   }
    .p-div {
-    margin-bottom: 40px; 
+    margin-bottom: 28px;
    }
    .p-div  h4{
     font-size: 22px;
     line-height: 27px;
-   } 
+   }
    .p-div .icons {
     font-size: 14px;
     gap: 10px;
 
-   } 
+   }
    .footer-links {
-    gap: 10px;
+    gap: 8px;
    }
   .footer-links .Link, .bar{
     font-size: 11px;
     line-height: 17px;
     white-space: normal;
-  } 
+  }
   .copyright{
     line-height: 11.82px;
     font-size: 7.82px;
@@ -100,28 +111,28 @@
   .footer {
     height: 122px;
     padding: 20px 15px 20px 20px;
-   }   
+   }
    .p-div {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
    }
    .p-div  h4{
     font-size: 12.69px;
     line-height: 15.36px;
-   }  
+   }
    .p-div .icons {
-    font-size: 9px; 
-   }  
+    font-size: 9px;
+   }
    .footer-links {
-    gap: 3px;
+      gap: 3px;
    }
    .footer-links .Link, .bar{
     font-size: 7px;
     line-height: 10px;
-  } 
+  }
   .copyright{
     line-height: 4.5px;
-    font-size: 6.83px; 
-    bottom: 15px;
+    font-size: 6.83px;
+    bottom: 0;
   }
 
 }

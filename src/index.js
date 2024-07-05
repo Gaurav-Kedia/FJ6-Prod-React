@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import Support from './Components/Support';
@@ -21,8 +22,9 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
+      <Route path="/:id" element={<App />} />
       <Route path="*" element={<App />} />
-      <Route path="support" element={<Support />} />
+       <Route path="support" element={<Support />} />
       <Route path="privacy" element={<Privacy />} />
       <Route path="tnc" element={<Tnc />} />
       <Route path="cnr" element={<Cnr />} />
