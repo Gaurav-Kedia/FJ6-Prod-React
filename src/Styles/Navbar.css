@@ -7,6 +7,10 @@
     box-shadow: 0px 4px 4px 0px #00000040;
   }
 
+  dl, ol, ul{
+    margin-bottom: 0px !important;
+  }
+  
 .logo { 
   display: flex; 
   gap: 10px; 
@@ -79,6 +83,7 @@
     margin-right: 50px;
     gap: 15px;
   } 
+  
   .sign-up {
     font-size: 11px; 
     padding: 6px 14px 6px 14px;
