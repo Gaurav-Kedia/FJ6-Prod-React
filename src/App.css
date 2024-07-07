@@ -1,12 +1,19 @@
 .App {
+.App {
   max-height: 100vh;
   width: 100%;
   background-color: #ffffff;
 }
 
 .main {
+  background-color: #ffffff;
+}
+
+.main {
   display: flex;
   height: calc(100% - 60px);
+}
+
 }
 
 .main {
@@ -16,6 +23,10 @@
   flex-direction: column;
   flex-direction: column;
   gap: 30px;
+}
+
+.top-container {
+  display: flex;
 }
 
 .top-container {
@@ -45,6 +56,14 @@
   position: relative;
   background-color: white;
   box-shadow: 0px 4px 4px 0px #00000040;
+  border-radius: 13px;
+}
+
+.monaco-editor,
+.overflow-guard {
+  border-radius: 13px;
+}
+
   border-radius: 13px;
 }
 
@@ -136,6 +155,73 @@
   background-color: #00a925 !important;
   color: white !important; 
 }
+}
+
+.buttons-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.btn{
+  height: 43px !important;
+  background-color: white !important;
+  border: none !important;
+  border-radius: 12px !important;
+  color: #4f4f4f !important;
+  border: 1px solid #d2cfcf !important;
+  box-shadow: 0px 4px 4px 0px #00000040 !important;
+}
+
+.btn:hover{
+  color: #4f4f4f !important ;
+}
+.theme-change {
+  display: grid;
+  place-content: center;
+  width: 45px;
+}
+
+.theme-change .light-mode {
+  font-size: 17px;
+}
+
+.settings {
+  width: 45px;
+  font-size: 16px;
+}
+
+.language-select {
+  padding: 10px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.run-btn {
+  background-color: #00a925 !important;
+  border: none !important;
+  padding: 0 20px !important;
+  color: white !important; 
+  display: flex !important; 
+  align-items: center;
+  gap: 8px !important;
+  font-family: Inter !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 19px !important;
+  letter-spacing: 0em !important;
+  text-align: left !important;
+}
+
+.run-btn:hover{
+  background-color: #00a925 !important;
+  color: white !important; 
+}
 .input-box {
   padding: 15px;
   padding: 15px;
@@ -156,6 +242,7 @@
   background-color: #f1f1f1;
   background-color: #f1f1f1;
 }
+
 
 .output-box {
   height: 277px;
@@ -203,9 +290,63 @@
 .extra {
   border: 1px solid #bfbfbf;
   padding: 30px 50px;
+  border-radius: 13px;
+  position: relative;
+}
+
+.output-box .title {
+  width: 100%;
+  height: 47px;
+  font-family: Poppins;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+  background-color: #909090;
+  border-radius: 13px 13px 0px 0px;
+  padding: 10px;
+}
+
+.output-box pre {
+  width: 100%;
+  height: 231px;
+  padding: 10px;
+  font-family: Poppins;
+  font-size: 13px;
+  /* color: #00A925; */
+  color: #000000;
+  border: 1px solid #b3b3b3;
+  border-top-width: 0;
+  border-radius: 0 0 13px 13px;
+  background-color: white;
+  overflow-y: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.extra {
+  border: 1px solid #bfbfbf;
+  padding: 30px 50px;
   box-shadow: 0px 4px 4px 0px #00000040;
   border-radius: 13px;
   margin-bottom: 30px;
+  width: 100%;
+  margin-top: 20px;
+  /* Add margin to separate from above content */
+}
+
+.extra ul {
+  color: #4e4e4e;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
   width: 100%;
   margin-top: 20px;
   /* Add margin to separate from above content */
@@ -294,11 +435,89 @@
 }
 
 @media screen and (max-width: 767px) {
+/* Add a media query for desktop version */
+
+@media (min-width: 1024px) {
   .main {
+    flex-direction: column;
+    /* Maintain column direction */
+    padding: 20px;
+  }
+
+  .top-container {
+    width: 50%;
+    /* Full width for the top-container */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .content-row {
+    display: flex;
+    flex-direction: row;
+    /* Horizontal layout for the row */
+    gap: 30px;
+    justify-content: space-between;
+    width: 100%;
+    /* Full width */
+  }
+
+  .editor-container {
+    flex: 1;
+  }
+
+  .right-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.editor-container {
+  height: 371px;
+  border: 2px solid #cfcfcf;
+  position: relative;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.input-div,
+.output-box {
+  width: 100%;
+}
+
+.extend-editor {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #575757;
+  height: 42px;
+  width: 42px;
+  border: 1px solid #808080;
+  border-radius: 10px;
+  background-color: transparent;
+  display: grid;
+  place-content: center;
+}
+
+@media screen and (max-width: 900px) {
+  .main {
+    padding: 80px 29px 0 29px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main {
+    padding: 50px 29px 0 29px;
     padding: 50px 29px 0 29px;
   }
 
+
   .btn {
+    height: 35px !important;
+  }
+
     height: 35px !important;
   }
 
@@ -307,12 +526,20 @@
   }
 
   .theme-change .light-mode {
+    width: 35px;
+  }
+
+  .theme-change .light-mode {
     font-size: 18px;
   }
+
 
   .settings {
     width: 35px;
     font-size: 13px;
+  }
+
+  .language-select {
   }
 
   .language-select {
@@ -321,16 +548,27 @@
     padding: 8px;
   }
 
+    padding: 8px;
+  }
+
   .run-btn {
     line-height: 13.5px !important;
     font-size: 12.5px !important;
+    line-height: 13.5px !important;
+    font-size: 12.5px !important;
   }
+
 
   .input-box {
     font-size: 14px;
     line-height: 24px;
     padding: 14px;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 14px;
     height: 56px;
+  }
+
   }
 
   .output-box {
@@ -340,11 +578,22 @@
   .output-box .title {
     padding: 10px 10px;
     font-size: 14px;
+  }
+
+  .output-box .title {
+    padding: 10px 10px;
+    font-size: 14px;
     line-height: 15px;
   }
 
+
   .output-box pre {
     height: 91px;
+  }
+
+  .extra {
+    padding: 20px 40px;
+    margin-top: 0px;
   }
 
   .extra {
@@ -358,8 +607,20 @@
     margin-bottom: 20px;
   }
   .extra ul {
+  .p-div{
+    margin-bottom: 20px;
+  }
+  .extra ul {
     font-size: 10px;
     line-height: 15px;
+  }
+  .monaco-editor .line-numbers, .monaco-editor .view-line, .monaco-editor.no-user-select .lines-content, .monaco-editor.no-user-select .view-line, .monaco-editor.no-user-select .view-lines{
+    font-size: 10px;
+  }
+  .extra{
+    padding: 10px 10px;
+  }
+}
   }
   .monaco-editor .line-numbers, .monaco-editor .view-line, .monaco-editor.no-user-select .lines-content, .monaco-editor.no-user-select .view-line, .monaco-editor.no-user-select .view-lines{
     font-size: 10px;
