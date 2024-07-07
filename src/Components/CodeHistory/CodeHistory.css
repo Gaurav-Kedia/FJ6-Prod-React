@@ -1,0 +1,45 @@
+
+
+.box{
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 100% !important;
+    /* box-shadow: ; */
+}
+.button{
+    border: 0.1px solid !important;
+    border-radius: 4px;
+    
+}
+.button:hover{
+    /* background-color: #00A925; */
+    color: black !important;
+}
+.max-modal-height{
+    max-height: 38rem;
+    min-height: 38rem;
+    overflow-y: scroll;
+
+    scroll-behavior: smooth;
+  
+}
+::-webkit-scrollbar {
+    width: 6px !important;
+    height: 4px !important;
+  }
+  ::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+  }
+
+.loading-animation{
+    height: 60vh;
+}
+.date-font{
+    font-size: 12px;
+}
+
