@@ -92,7 +92,8 @@ function App() {
 
 	const getSingleCode =async () => {
 	   setLoading(true);
-		let url = "https://www.foreverjava.com:9010/get-file-contents?fileName=" + id
+		//let url = "https://www.foreverjava.com:9010/get-file-contents?fileName=" + id
+		let url = "https://apis.foreverjava.com/send/file-content?fileName=" + id
 		await Axios
 			.get(url)
 			.then(function (response) {
