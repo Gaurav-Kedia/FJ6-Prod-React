@@ -16,7 +16,8 @@ export const CodeHistory = (props) => {
     const getCodeHistory = async() => {
         setIsLoading(true);
         await Axios
-            .get("https://www.foreverjava.com:9010/list-java-files")
+            //.get("https://www.foreverjava.com:9010/list-java-files")
+            .get("https://apis.foreverjava.com/send/files-list")
             .then(function (response) {
                 setCodeHistory(response.data);
                 // setIsLoading(false);
